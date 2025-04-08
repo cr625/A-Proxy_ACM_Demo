@@ -6,14 +6,70 @@
 \usepackage{subcaption}
 \usepackage{listings}
 
-\title{A Proxy Tool for Preserving and Inspecting Online Ads in Web Archives}
+\title{A Proxy Persona Tool For Web Viewing and Chat Interaction}
 
-\author{Christopher Rauch}
+\author{Christopher B. Rauch}
 \affiliation{%
   \institution{Drexel University}
+  \city{Philadelphia}
+  \state{PA}
   \country{USA}
 }
 \email{cr625@drexel.edu}
+
+\author{Hyung Wook Choi}
+\affiliation{%
+  \institution{Drexel University}
+  \city{Philadelphia}
+  \state{PA}
+  \country{USA}
+}
+\email{hc685@drexel.edu}
+
+\author{Michael L. Nelson}
+\affiliation{%
+  \institution{Old Dominion University}
+  \city{Norfolk}
+  \state{VA}
+  \country{USA}
+}
+\email{mln@cs.odu.edu}
+
+\author{Alex H. Poole}
+\affiliation{%
+  \institution{Drexel University}
+  \city{Philadelphia}
+  \state{PA}
+  \country{USA}
+}
+\email{ahp56@drexel.edu}
+
+\author{Travis Reid}
+\affiliation{%
+  \institution{Old Dominion University}
+  \city{Norfolk}
+  \state{VA}
+  \country{USA}
+}
+\email{treid003@odu.edu}
+
+\author{Michele C. Weigle}
+\affiliation{%
+  \institution{Old Dominion University}
+  \city{Norfolk}
+  \state{VA}
+  \country{USA}
+}
+\email{mweigle@cs.odu.edu}
+
+\author{Mat Kelly}
+\affiliation{%
+  \institution{Drexel University}
+  \city{Philadelphia}
+  \state{PA}
+  \country{USA}
+}
+\email{mkelly@drexel.edu}
 
 \begin{abstract}
 Online advertisements are an ephemeral yet influential form of digital content. Despite their centrality to the modern web, ads are often missing or misrepresented in web archives. This demo presents an interactive proxy tool designed to capture, inspect, and preserve online advertisements in real-time browsing sessions. The system offers researchers and archivists a method to analyze the behaviors and presence of ads during web interactions. We describe the design and implementation of the tool, its use...
@@ -22,9 +78,6 @@ Online advertisements are an ephemeral yet influential form of digital content. 
 \keywords{web archiving, advertisements, proxy server, personalization, reproducibility}
 
 \begin{document}
-
-\maketitle
-
 \begin{teaserfigure}
   \centering
   \includegraphics[width=\textwidth]{persona-teaser.png}
@@ -32,14 +85,29 @@ Online advertisements are an ephemeral yet influential form of digital content. 
   \Description{Screenshot of A-Proxy interface showing persona settings, VPN toggle, and browser controls including geolocation and language.}
   \label{fig:persona}
 \end{teaserfigure}
+\maketitle
+
 
 \section{Introduction}
-Web advertisements are tailored content that play a critical role in shaping user experience, influencing opinion, and driving revenue. Despite their significance, such ads are often excluded from archived web pages due to technical and policy challenges. This gap hinders research on online influence, personalization, and ad ecosystems. To address this, we present a proxy-based tool that captures web ads as users encounter them, enabling deeper inspection and archival quality assessment.
+Web advertisements are personalized according to marketing categories
+
+There are tools for mocking browser interactions but nothing specifically designed for archivists
+
+Related work
 
 \section{System Overview}
 Our system is built as a local HTTP proxy that intercepts and logs ad-related requests during a browsing session. Users direct their browser traffic through the proxy, which records third-party requests, DOM changes, and visual captures of ad content.
 
-\section{Use Cases}
+\section{System Architecture}
+Core components
+
+Database design
+
+VPN Integration
+
+System Diagram.
+
+\section{Demo Scenario}
 This tool is suited for digital preservationists, researchers conducting web-based content audits, and scholars studying online influence. For example, one can use the proxy to inspect how ad content differs across user personas or to compare live versus archived versions of the same page.
 
 \section{Implementation}
