@@ -1,3 +1,4 @@
+
 \documentclass[sigconf]{acmart}
 
 \usepackage{graphicx}
@@ -72,10 +73,10 @@
 \email{mkelly@drexel.edu}
 
 \begin{abstract}
-Online advertisements are an ephemeral yet influential form of digital content. Despite their centrality to the modern web, ads are often missing or misrepresented in web archives. This demo presents an interactive proxy tool designed to capture, inspect, and preserve online advertisements in real-time browsing sessions. The system offers researchers and archivists a method to analyze the behaviors and presence of ads during web interactions. We describe the design and implementation of the tool, its use...
+This demo presents an interactive proxy tool designed to capture, inspect, and preserve personalized online activity in real-time browsing sessions. The system offers researchers and archivists a method to analyze the behaviors and presence of ads and other dynamic content during web interactions. The tool can be extended to provide context to Large Language Models that leverages the personalization options available in the major models and also allows persona information to be passed as additional context.
 \end{abstract}
 
-\keywords{web archiving, advertisements, proxy server, personalization, reproducibility}
+\keywords{web archiving, advertisements, proxy server, personalization}
 
 \begin{document}
 \begin{teaserfigure}
@@ -89,14 +90,14 @@ Online advertisements are an ephemeral yet influential form of digital content. 
 
 
 \section{Introduction}
-Web advertisements are personalized according to marketing categories
+Web advertisements are personalized according to marketing categories...
 
 There are tools for mocking browser interactions but nothing specifically designed for archivists
 
 Related work
 
 \section{System Overview}
-Our system is built as a local HTTP proxy that intercepts and logs ad-related requests during a browsing session. Users direct their browser traffic through the proxy, which records third-party requests, DOM changes, and visual captures of ad content.
+Local HTTP proxy that intercepts and logs ad-related requests during a browsing session. Users direct their browser traffic through the proxy, which records third-party requests, DOM changes, and visual captures of ad content.
 
 \section{System Architecture}
 Core components
@@ -111,14 +112,14 @@ System Diagram.
 This tool is suited for digital preservationists, researchers conducting web-based content audits, and scholars studying online influence. For example, one can use the proxy to inspect how ad content differs across user personas or to compare live versus archived versions of the same page.
 
 \section{Implementation}
-The proxy is written in Python and leverages \texttt{mitmproxy} for traffic interception and modification. Captured ad content is rendered and stored locally in a structured format. The system integrates with headless browsers to automate browsing sessions for reproducibility.
+The proxy is written in Python and uses a combination of proxy server and browser testing tools for traffic interception and modification. Captured ad content is rendered and stored locally in a structured format. The system integrates with headless browsers to automate browsing sessions for reproducibility.
 
 The source code is available at: \url{https://github.com/savingads/a-proxy}
 
 A demonstration video is accessible at: \url{[INSERT VIDEO LINK HERE]}
 
 \section{Conclusion and Future Work}
-This tool aims to improve the completeness and interpretability of web archives by focusing on the visibility and behavior of online ads. Future work includes support for mobile traffic, real-time annotation, and integration with archival platforms.
+Future work includes support for mobile traffic, real-time annotation, and integration with archival platforms and llms
 
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{software}
