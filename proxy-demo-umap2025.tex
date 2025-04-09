@@ -92,9 +92,13 @@ This demo presents an interactive proxy tool designed to capture, inspect, and p
 \section{Introduction}
 Web advertisements are personalized according to marketing categories...
 
-There are tools for mocking browser interactions but nothing specifically designed for archivists
+Advertisers gather data to customize content for each user, leveraging details such as demographics, behavior, and context to deliver highly personalized experiences. This data includes factors such as age, location, interests, and specific behavioral trends, including browsing habits and interaction styles. Adapting advertisements to user demographics improves relevance and engagement, leading to higher click-through rates and overall effectiveness \cite{de2015towards}. These practices allow businesses to refine their strategies by analyzing how different demographic groups respond to campaigns \cite{carrascosa2015always}. 
 
-Related work
+Kelly et al. (2013) \cite{kelly2013method} identified issues with personalized representations in web archiving and presented a prototype that extends GeoIP and browser environment. Specifically, they provided examples of how some websites display different contents, including news and weather information, depending on the user’s GeoIP or user-provided zip code. This shows how geolocation can impact the content presented to a user. Sowbhagya et al. (2022) \cite{hidri2024learning} explored how demographic information can be integrated with behavioral data to create more nuanced and accurate user profiles. Their research highlighted the importance of combining multiple data points to achieve more precise personalization, showing that demographic attributes often serve as crucial contextual markers that help interpret and predict user intentions and preferences. This multidimensional approach to user profiling allows for more refined targeting strategies and improved user experience customization.
+
+Building on previous studies, similar strategies could be explored to improve the user experience in archives. Personalization techniques used in advertising, such as behavioral profiling and tracking, provide practical methods for capturing and representing individualized interactions with pages that are archived, but also for reproducing these interactions to simulate behavior. In this paper, we introduce A-Proxy, a tool that 
+
+
 
 \section{System Overview}
 Local HTTP proxy that intercepts and logs ad-related requests during a browsing session. Users direct their browser traffic through the proxy, which records third-party requests, DOM changes, and visual captures of ad content.
