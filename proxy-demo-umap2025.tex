@@ -6,8 +6,6 @@
 \usepackage{hyperref}
 \usepackage{subcaption}
 \usepackage{listings}
-\usepackage{tikz}
-\usetikzlibrary{shapes,arrows,positioning,fit,backgrounds}
 
 \title{A Proxy Persona Tool For Web Viewing and Chat Interaction}
 
@@ -131,57 +129,7 @@ Finally, the \textbf{Archive Management} component records website snapshots ("m
 The components interact through well-defined APIs, with the Flask application serving as the orchestration layer. Data flows from the user interface to the persona database, which configures the VPN and browser settings before requests are processed through the proxy server. Response data and screenshots are then stored in the archive system for future analysis.
 
 \section{Demo Scenario}
-Our demonstration will showcase A-Proxy's capabilities through three interactive scenarios that highlight its utility for different user groups, as illustrated in Figure~\ref{fig:demo-scenarios}.
-
-\begin{figure}
-\centering
-\begin{tikzpicture}[
-    node distance=1.2cm,
-    box/.style={rectangle, rounded corners, draw=black, text width=3.5cm, minimum height=1.2cm, align=center, fill=blue!10},
-    arrow/.style={->, >=stealth, thick},
-    persona/.style={rectangle, rounded corners, draw=black, text width=1.8cm, minimum height=0.8cm, align=center, fill=green!10},
-    website/.style={rectangle, rounded corners, draw=black, text width=1.8cm, minimum height=0.8cm, align=center, fill=orange!10}
-]
-% Central A-Proxy system
-\node[box, fill=gray!20] (proxy) {A-Proxy System};
-
-% Scenario 1: Personalization Research
-\node[box, above of=proxy, yshift=1.5cm] (scenario1) {Personalization Research};
-\node[persona, left of=scenario1, xshift=-1.3cm] (persona1a) {Young Urban User};
-\node[persona, right of=scenario1, xshift=1.3cm] (persona1b) {Senior Rural User};
-\node[website, above of=scenario1, yshift=0.8cm] (website1) {Search Results \& News Feeds};
-
-% Scenario 2: Web Archiving
-\node[box, left of=proxy, xshift=-3.5cm] (scenario2) {Web Archiving with Context};
-\node[persona, left of=scenario2, xshift=-1.3cm] (persona2) {German Locale};
-\node[below of=scenario2, yshift=-0.3cm] (archive) {Archive};
-
-% Scenario 3: User Journey
-\node[box, right of=proxy, xshift=3.5cm] (scenario3) {User Journey Analysis};
-\node[website, above right of=scenario3, xshift=0.5cm, yshift=0.5cm] (site1) {Site 1};
-\node[website, right of=scenario3, xshift=1.3cm] (site2) {Site 2};
-\node[website, below right of=scenario3, xshift=0.5cm, yshift=-0.5cm] (site3) {Site 3};
-
-% Connections
-\draw[arrow] (proxy) -- (scenario1);
-\draw[arrow] (proxy) -- (scenario2);
-\draw[arrow] (proxy) -- (scenario3);
-
-\draw[arrow] (persona1a) -- (scenario1);
-\draw[arrow] (persona1b) -- (scenario1);
-\draw[arrow] (scenario1) -- (website1);
-
-\draw[arrow] (persona2) -- (scenario2);
-\draw[arrow] (scenario2) -- (archive);
-
-\draw[arrow] (scenario3) -- (site1);
-\draw[arrow] (site1) -- (site2);
-\draw[arrow] (site2) -- (site3);
-
-\end{tikzpicture}
-\caption{A-Proxy demonstration scenarios: (1) Personalization Research compares website presentations across different user profiles; (2) Web Archiving with Context preserves personalized web views with their contextual metadata; and (3) User Journey Analysis tracks sequential interactions across multiple sites under consistent persona settings.}
-\label{fig:demo-scenarios}
-\end{figure}
+Our demonstration will showcase A-Proxy's capabilities through three interactive scenarios that highlight its utility for different user groups. A diagram illustrating these scenarios is available in the supplementary materials.
 
 In the \textbf{Personalization Research} scenario, we demonstrate how researchers can use A-Proxy to systematically investigate content personalization across platforms. Attendees will observe how search results, news feeds, and product recommendations change based on simulated user attributes. The demonstration will cycle through multiple demographic profiles (varying age, gender, location) while accessing the same websites, revealing algorithmic personalization patterns in real-time. This scenario showcases A-Proxy's value for critical algorithm studies and digital marketing research.
 
