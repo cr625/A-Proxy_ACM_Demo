@@ -73,7 +73,7 @@
 \email{mkelly@drexel.edu}
 
 \begin{abstract}
-This demo presents an interactive proxy tool designed to capture, inspect, and preserve personalized online activity in real-time browsing sessions. The system offers researchers and archivists a method to analyze the behaviors and presence of ads and other dynamic content during web interactions. The tool can be extended to provide context to Large Language Models that leverages the personalization options available in the major models and also allows persona information to be passed as additional context.
+This demo presents A-Proxy, an interactive proxy tool designed to capture, inspect, and preserve personalized online activity in real-time browsing sessions from the context of specific personas. The tool enables archivists to save these browsing sessions as user journeys related to specific topics. The archived data offers a more persistent storage option for recorded behaviors and the opportunity to examine personalization aspects in a consistent way. We intend to extend the current functionality to leverage personalization options available in large language models (LLMs) and allow persona information to be passed as additional context to these models.
 \end{abstract}
 
 \keywords{web archiving, advertisements, proxy server, personalization}
@@ -82,7 +82,7 @@ This demo presents an interactive proxy tool designed to capture, inspect, and p
 \begin{teaserfigure}
   \centering
   \includegraphics[width=\textwidth]{persona-teaser.png}
-  \caption{Interface of the proxy system showing persona-level customization, including geolocation, language, and behavioral settings. The system enables fine-grained control over browser characteristics to simulate user experiences during web archiving or ad tracking.}
+  \caption{Interface of the proxy system showing persona-level customization, including geolocation, language, and behavioral settings. The system enables fine-grained control over browser characteristics to simulate user experiences during web viewing and archiving.}
   \Description{Screenshot of A-Proxy interface showing persona settings, VPN toggle, and browser controls including geolocation and language.}
   \label{fig:persona}
 \end{teaserfigure}
@@ -90,22 +90,18 @@ This demo presents an interactive proxy tool designed to capture, inspect, and p
 
 
 \section{Introduction}
-Web advertisements are personalized according to marketing categories...
+Simulating the perspective of an individual user during web browsing and archiving is complex from both a technical and narrative perspective. Personalized content is influenced by factors such as location, language, and browsing habits. When pages are archived, these dynamic elements are often lost, making the original user experience difficult to reconstruct.
 
-Advertisers gather data to customize content for each user, leveraging details such as demographics, behavior, and context to deliver highly personalized experiences. This data includes factors such as age, location, interests, and specific behavioral trends, including browsing habits and interaction styles. Adapting advertisements to user demographics improves relevance and engagement, leading to higher click-through rates and overall effectiveness \cite{de2015towards}. These practices allow businesses to refine their strategies by analyzing how different demographic groups respond to campaigns \cite{carrascosa2015always}. 
-
-Kelly et al. (2013) \cite{kelly2013method} identified issues with personalized representations in web archiving and presented a prototype that extends GeoIP and browser environment. Specifically, they provided examples of how some websites display different contents, including news and weather information, depending on the user’s GeoIP or user-provided zip code. This shows how geolocation can impact the content presented to a user. Sowbhagya et al. (2022) \cite{hidri2024learning} explored how demographic information can be integrated with behavioral data to create more nuanced and accurate user profiles. Their research highlighted the importance of combining multiple data points to achieve more precise personalization, showing that demographic attributes often serve as crucial contextual markers that help interpret and predict user intentions and preferences. This multidimensional approach to user profiling allows for more refined targeting strategies and improved user experience customization.
-
-Building on previous studies, similar strategies could be explored to improve the user experience in archives. Personalization techniques used in advertising, such as behavioral profiling and tracking, provide practical methods for capturing and representing individualized interactions with pages that are archived, but also for reproducing these interactions to simulate behavior. In this paper, we introduce A-Proxy, a tool that 
+Kelly et al. (2013) \cite{kelly2013method} showed that websites display varying content, such as news and weather, based on the GeoIP of a user or provided zip code. Similarly, Sowbhagya et al. (2022) \cite{hidri2024learning} demonstrated that integrating demographic data with behavioral insights produces more accurate user profiles. These studies highlight how demographic attributes serve as important markers for understanding and predicting user intentions. By adopting the approaches of a marketing strategy, we create user profiles that capture interests, demographics, and browsing history. Research shows that adapting ads to user demographics improves relevance and engagement. This leads to higher click-through rates and overall effectiveness \cite{de2015towards}. Analysis of campaign responses among different demographic groups helps refine strategies \cite{carrascosa2015always}. Building on the commercial approach, we theorize that similar strategies could improve the representation of user experience during browsing to enable archival with important related data of the persona characteristics that were active at the time.
 
 
 
 \section{System Overview}
-A-Proxy is a comprehensive HTTP proxy system that intercepts and analyzes web traffic with a focus on personalization factors. The tool operates as a local proxy server that sits between the user's browser and the internet, capturing all HTTP/HTTPS requests and responses. By manipulating HTTP headers and browser settings, A-Proxy can simulate different user personas and geographic locations.
+A-Proxy is an HTTP proxy system that intercepts and analyzes web traffic with a focus on personalization factors. The tool operates as a local proxy server that sits between the user's browser and the Internet, capturing all HTTP/HTTPS requests and responses. By manipulating HTTP headers and browser settings, A-Proxy can simulate different user personas and geographic locations.
 
 The system is designed with four key components: (1) a persona management system that maintains detailed user profiles including demographic, psychographic, behavioral, and contextual attributes; (2) a VPN integration layer that allows network traffic to appear from different global locations; (3) a browser customization module that modifies language preferences and geolocation settings; and (4) an archival system that captures and stores snapshots (mementos) of websites with associated metadata.
 
-Users interact with A-Proxy through a web-based dashboard that provides real-time control over persona attributes and browsing parameters. The system can capture screenshots of rendered pages, record HTTP response headers, and organize browsing sessions into structured "journeys" for analysis. This comprehensive approach enables researchers and archivists to systematically examine how personalization affects web content delivery across different user contexts.
+Users interact with A-Proxy through a web-based dashboard that provides real-time control over persona attributes and browsing parameters. The system can capture screenshots of rendered pages, record HTTP response headers, and organize browsing sessions into structured "journeys" for analysis. This comprehensive approach enables researchers and archivists to systematically examine how personalization affects the delivery of web content in different user contexts.
 
 \section{System Architecture}
 A-Proxy employs a modular architecture comprising five core components, as illustrated in Figure~\ref{fig:persona}.
